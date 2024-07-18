@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 26
-  productGUID: 23b2f780fe856484080e37abac5ded66
+  productGUID: ec647bd074471a241b59bd8a5126a345
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: Saadoon project
+  productName: Mad doctor2
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -630,14 +630,14 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Saadoon project
+  metroPackageName: Mad doctor2
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: Saadoon project
+  metroApplicationDescription: Mad doctor2
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -706,10 +706,10 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 4902767e-b10c-460a-8868-c15c9f84a7fe
+  cloudProjectId: a6d22dde-8014-430e-89cc-b354e101c728
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Saadoon project
+  projectName: Mad doctor2
   organizationId: shaheerahmedkhan11
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
