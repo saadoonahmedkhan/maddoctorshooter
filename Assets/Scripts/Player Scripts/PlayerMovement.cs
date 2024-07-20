@@ -18,9 +18,11 @@ public class PlayerMovement : MonoBehaviour
     private float moveWaitTime = 0.3f;
     private float waitBeforeMoving;
     private bool canMove = true;
+    private PlayerShootingManager playerShootingManager;
     private void Awake()
     {
         playerAnimation = GetComponent<PlayerAnimation>();
+        playerShootingManager = GetComponent<PlayerShootingManager>();
     }
     // Update is called once per frame
     void Update()
@@ -85,6 +87,7 @@ public class PlayerMovement : MonoBehaviour
         waitBeforeShooting = Time.time + shootWaitTime;
         StopMovement();
         playerAnimation.PlayAnimation(TagManager.SHOOT_ANIMATION_NAME);
+        playerShootingManager.Shoot(transform.localScale.x);
     }
     void CheckIfCanMove()
     {

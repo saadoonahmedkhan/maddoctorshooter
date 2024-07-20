@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class Bullet_Scripts : MonoBehaviour
 {
     [SerializeField]
     private float MoveSpeed = 15f;
@@ -10,10 +10,7 @@ public class NewBehaviourScript : MonoBehaviour
     private float DamageAmount = 35;
     private Vector3 move = Vector3.zero;
     private Vector3 tempScale;
-    private void Start()
-    {
-        SetNegativeSpeed();
-    }
+   
     private void Update()
     {
         MoveBullet(); 
@@ -23,7 +20,7 @@ public class NewBehaviourScript : MonoBehaviour
         move.x = MoveSpeed * Time.deltaTime;
         transform.position += move;
     }
-    void SetNegativeSpeed()
+    public void SetNegativeSpeed()
     {
         MoveSpeed *= -1f;
         tempScale = transform.localScale;
