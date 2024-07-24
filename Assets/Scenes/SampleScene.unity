@@ -776,7 +776,7 @@ GameObject:
   - component: {fileID: 647394165}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2365,6 +2365,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2
   stoppingDistance: 1.5
+  attackWaitTime: 2.5
+  AttackFinishedWaitTime: 0.5
 --- !u!70 &2009590092
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
