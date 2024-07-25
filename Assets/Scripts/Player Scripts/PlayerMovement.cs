@@ -58,15 +58,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!canMove)
             return;
-        Debug.Log("xAxis: " + xAxis + " yAxis: " + yAxis);
         if (Mathf.Abs(xAxis) > 0 || Mathf.Abs(yAxis) > 0)
         {
-            Debug.Log("Playing walk animation: " + TagManager.WALK_ANIMATION_NAME);
             playerAnimation.PlayAnimation(TagManager.WALK_ANIMATION_NAME);
         }
         else
         {
-            Debug.Log("Playing idle animation: " + TagManager.IDLE_ANIMATION_NAME);
             playerAnimation.PlayAnimation(TagManager.IDLE_ANIMATION_NAME);
         } 
     }

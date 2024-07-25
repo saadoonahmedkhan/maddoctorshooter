@@ -14,7 +14,6 @@ public class PlayerAnimation : MonoBehaviour
     }
     public void PlayAnimation(string animationName)
     {
-        Debug.Log("Requested animation: " + animationName);
         if (currentAnimation == Animator.StringToHash(animationName))
             return;
         anim.Play(animationName);

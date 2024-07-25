@@ -17,6 +17,8 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private float AttackFinishedWaitTime = 0.5f;
     private float attackFinishedTimer;
+    [SerializeField]
+    private EnemyDamageArea enemyDamageArea;
     private void Awake()
     {
         playerTarget = GameObject.FindWithTag(TagManager.PLAYER_TAG).transform;
@@ -75,5 +77,10 @@ public class Enemy : MonoBehaviour
             attackTimer = Time.time + attackWaitTime;
             enemyAnimation.PlayAnimation(TagManager.ATTACK_ANIMATION_NAME);
         }
+    }
+    void EnemyAttacked()
+    {
+        enemyDamageArea.gameObject.SetActive(true);
+        enemyDamageArea.ResetDeactivateTimer();
     }
 }
