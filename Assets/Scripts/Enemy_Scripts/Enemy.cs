@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour
     private float attackFinishedTimer;
     [SerializeField]
     private EnemyDamageArea enemyDamageArea;
+    private bool enemyDied;
     private void Awake()
     {
         playerTarget = GameObject.FindWithTag(TagManager.PLAYER_TAG).transform;
@@ -26,6 +27,10 @@ public class Enemy : MonoBehaviour
     }
     private void Update()
     {
+        if(enemyDied)
+        {
+            return;
+        }
         SearchForPlayer();  
     }
     private void SearchForPlayer()
@@ -82,5 +87,15 @@ public class Enemy : MonoBehaviour
     {
         enemyDamageArea.gameObject.SetActive(true);
         enemyDamageArea.ResetDeactivateTimer();
+    }
+    public void EnemyDied()
+    {
+        enemyDied = true;
+        enemyAnimation.PlayAnimation(TagManager.DEATH_ANIMATION_NAME);
+        Invoke("DestroyEnemyAfterDelay",1.5f);
+    }
+    void DestroyEnemyAfterDelay()
+    {
+        Destroy(gameObject);
     }
 }

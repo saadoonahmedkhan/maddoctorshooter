@@ -25,8 +25,13 @@ public class CameraFollow : MonoBehaviour
         if(playerTarget.position.y<= player_BoundMin_Y )
         {
             tempPos = Vector3.Lerp(transform.position,new Vector3(playerTarget.position.x,playerTarget.position.y,-10),Time.deltaTime*smoothSpeed);
-
         }
+        else
+        {
+            tempPos = Vector3.Lerp(transform.position, new Vector3(playerTarget.position.x, playerTarget.position.y+Y_Gap, -10), Time.deltaTime * smoothSpeed);
+        }
+        if (tempPos.x > player_BoundMax_X) tempPos.x = player_BoundMax_X;
+        if (tempPos.x < player_BoundMin_X) tempPos.x = player_BoundMin_X;
         transform.position = tempPos;
     }
 }

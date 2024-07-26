@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class Collector : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider2D Collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(Collision.CompareTag(TagManager.BULLET_TAG))
-        {
-            Destroy(Collision.gameObject);
-        }
+        if (collision.CompareTag(TagManager.BULLET_TAG))
+            Destroy(collision.gameObject);
     }
 }

@@ -31,7 +31,8 @@ public class Bullet_Scripts : MonoBehaviour
     {
      if(collision.CompareTag(TagManager.ENEMY_TAG))
         {
-            //Deal Damage
+            collision.GetComponent<EnemyHealth>().TakeDamage(DamageAmount);
+            Destroy(gameObject);
         }
     }
 }
