@@ -8,7 +8,6 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField]
     public float health = 100f;
     private PlayerMovement playerMovement;
-    private bool playerDied;
     [SerializeField]
     private Slider healthSlider;
     private void Awake()
@@ -24,7 +23,7 @@ public class PlayerHealth : MonoBehaviour
         {
             health = 0;
             playerMovement.PlayerDied();
-            EnemySpawner.instance.EnemyDied(gameObject);
+            GamePlayController.instance.RestartGame();
         }
         healthSlider.value = health;
     }

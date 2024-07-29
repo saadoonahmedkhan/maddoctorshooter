@@ -15,5 +15,6 @@ public class PlayerShootingManager : MonoBehaviour
         {
             newBullet.GetComponent<Bullet_Scripts>().SetNegativeSpeed();
         }
+        SoundManager.instance.PlayShootSound();
     }
 }

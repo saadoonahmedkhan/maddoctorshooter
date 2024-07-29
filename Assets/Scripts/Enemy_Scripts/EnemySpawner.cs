@@ -35,6 +35,6 @@ public class EnemySpawner : MonoBehaviour
     }
     public void EnemyDied(GameObject newEnemy)
     {
-        spawnedEnemies.Remove(gameObject);
+        spawnedEnemies.Remove(newEnemy);
     }
 }

@@ -4,7 +4,7 @@ public static class TagManager
     public static string PLAYER_TAG = "Player";
     public static string ENEMY_TAG = "Enemy";
     public static string BULLET_TAG = "Bullet";
-    public static string GAMEPLAY_CANVAS_TAG = "GameplayCanvas";
+    public static string GAMEPLAY_CANVAS_TAG = "SampleScene";
 
     public static string HORIZONTAL_AXIS = "Horizontal";
     public static string VERTICAL_AXIS = "Vertical";
