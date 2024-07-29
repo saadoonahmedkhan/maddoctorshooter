@@ -20,6 +20,9 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private EnemyDamageArea enemyDamageArea;
     private bool enemyDied;
+    [SerializeField]
+    private RectTransform healthBarTransform;
+    private Vector3 HealthBartempScale;
     private void Awake()
     {
         playerTarget = GameObject.FindWithTag(TagManager.PLAYER_TAG).transform;
@@ -49,8 +52,9 @@ public class Enemy : MonoBehaviour
             }
             else
             {
-                CheckIfAttackFinished();
                 Attack();
+                CheckIfAttackFinished();
+               
             }
         }
     }
@@ -66,12 +70,23 @@ public class Enemy : MonoBehaviour
             tempScale.x = -Mathf.Abs(tempScale.x);
         }
         transform.localScale = tempScale;
+        HealthBartempScale = healthBarTransform.localScale;
+        if(transform.localScale.x>0)
+        {
+            HealthBartempScale.x = Mathf.Abs(HealthBartempScale.x);
+        }
+        else
+        {
+            HealthBartempScale.x = -Mathf.Abs(HealthBartempScale.x);
+        }
+        healthBarTransform.localScale = HealthBartempScale;
     }
     void CheckIfAttackFinished()
     {
-        if(Time.time>AttackFinishedWaitTime)
+        if(Time.time> attackFinishedTimer)
         {
-            enemyAnimation.PlayAnimation(TagManager.IDLE_ANIMATION_NAME);
+            enemyAnimation.PlayAnimation(TagManager.IDLE_ENEMY_ANIMATION);
+            print("Enemy is Idle");
         }
     }
     void Attack()
@@ -81,6 +96,7 @@ public class Enemy : MonoBehaviour
             attackFinishedTimer = Time.time + AttackFinishedWaitTime;
             attackTimer = Time.time + attackWaitTime;
             enemyAnimation.PlayAnimation(TagManager.ATTACK_ANIMATION_NAME);
+            Debug.Log("Enemy is Attacking");
         }
     }
     void EnemyAttacked()

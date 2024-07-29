@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField]
     private float health = 100f;
     private Enemy enemyScript;
+    [SerializeField]
+    private Slider EnemyHealthSlider;
     private void Awake()
     {
         enemyScript = GetComponent<Enemy>();
@@ -21,5 +24,6 @@ public class EnemyHealth : MonoBehaviour
             health = 0;
             enemyScript.EnemyDied();
         }
+        EnemyHealthSlider.value = health;
     }
 }

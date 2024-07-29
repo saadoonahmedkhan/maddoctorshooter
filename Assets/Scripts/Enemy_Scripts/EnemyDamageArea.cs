@@ -12,8 +12,10 @@ public class EnemyDamageArea : MonoBehaviour
     private bool canDealDamage;
     [SerializeField]
     private float damageAmount = 5f;
+    private PlayerHealth playerHealth;
     private void Awake()
     {
+        playerHealth = GameObject.FindWithTag(TagManager.PLAYER_TAG).GetComponent<PlayerHealth>();
         gameObject.SetActive(false);
     }
     private void Update()
@@ -23,7 +25,7 @@ public class EnemyDamageArea : MonoBehaviour
             if (canDealDamage)
             {
                 canDealDamage = false;
-                Debug.Log("Dealed Damage");
+                playerHealth.TakeDamage(damageAmount);
             }
             DeactivateDamageArea();
         }

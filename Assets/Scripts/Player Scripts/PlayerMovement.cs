@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     private float waitBeforeMoving;
     private bool canMove = true;
     private PlayerShootingManager playerShootingManager;
+    private bool playerDied;
     private void Awake()
     {
         playerAnimation = GetComponent<PlayerAnimation>();
@@ -26,7 +27,9 @@ public class PlayerMovement : MonoBehaviour
     }
     // Update is called once per frame
     void Update()
-    { 
+    {
+        if (playerDied)
+            return;
         HandleMovement();
         HandleAnimation();
         HandleFacingDirection();
@@ -99,6 +102,16 @@ public class PlayerMovement : MonoBehaviour
                 Shoot();
         }
 
+    }
+    public void PlayerDied()
+    {
+        playerDied = true;
+        playerAnimation.PlayAnimation(TagManager.DEATH_ANIMATION_NAME);
+        Invoke("DestroyplayerAfterDelay",2f);
+    }
+    void DestroyplayerAfterDelay()
+    {
+        Destroy(gameObject);
     }
 
 }
